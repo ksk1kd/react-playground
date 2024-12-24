@@ -1,7 +1,10 @@
+import { UseStatePlayground } from './components/useStatePlayground'
 function App() {
   return (
     <>
-      <div className="container">Contents</div>
+      <div className="container">
+        <UseStatePlayground />
+      </div>
     </>
   )
 }
