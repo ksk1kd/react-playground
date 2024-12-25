@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 
 function sumToMax(num: number) {
-  console.log('sumToMax called')
+  // console.log('sumToMax called')
   return Array.from({ length: num + 1 }, (_, i) => i).reduce(
     (acc, val) => acc + val,
     0,
