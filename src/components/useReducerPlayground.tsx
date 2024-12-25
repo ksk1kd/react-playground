@@ -89,7 +89,7 @@ export function UseReducerPlayground() {
                   <label>
                     <input
                       type="checkbox"
-                      onClick={() =>
+                      onChange={() =>
                         dispatch({
                           type: 'update',
                           payload: { id: item.id, completed: true },
@@ -128,7 +128,7 @@ export function UseReducerPlayground() {
                   <label>
                     <input
                       type="checkbox"
-                      onClick={() =>
+                      onChange={() =>
                         dispatch({
                           type: 'update',
                           payload: { id: item.id, completed: false },
