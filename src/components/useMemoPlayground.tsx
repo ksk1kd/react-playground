@@ -1,19 +1,16 @@
 import { useMemo, useState } from 'react'
 
-function sumToMax(num: number) {
-  // console.log('sumToMax called')
-  return Array.from({ length: num + 1 }, (_, i) => i).reduce(
-    (acc, val) => acc + val,
-    0,
-  )
+function createArray() {
+  // console.log('createArray called')
+  const array = new Array(20000).fill(0).map((_, index) => index + 1)
+  return array
 }
 
 export function UseMemoPlayground() {
   const [state, setState] = useState(false)
-  const to = 10000
 
-  const result = useMemo(() => sumToMax(to), [])
-  // const result = sumToMax(to)
+  const array = useMemo(() => createArray(), [])
+  // const array = createArray()
 
   return (
     <>
@@ -25,7 +22,11 @@ export function UseMemoPlayground() {
           </button>
         </div>
         <div>
-          Sum of 0 to {to}: {result}
+          <ul>
+            {array.slice(0, 10).map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
